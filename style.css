@@ -4,6 +4,12 @@
 
 body {
   background: #eef9bf;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin: 0 20% 0 20%;;
 }
 
 header {
