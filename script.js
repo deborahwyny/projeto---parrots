@@ -14,9 +14,18 @@ cartaInicial.remove()
     for(let i = 0; i < numCartas; i++){
         const carta = document.createElement('div');
         carta.className = 'card';
-        carta.innerHTML = '<div class="card-back"><img class="img-back" src="./assets/back.png" alt="figura de um papagaio - card01"></div><div class="card-front" ><img class="img-face" src="./assets/unicornparrot.gif" alt="papagaio unicornio"></div>';
+        carta.innerHTML = '<div class="card" id="card01" data-test="card"><div class="card-back" ><img class="img-back" src="./assets/back.png" data-test="face-down-image" alt="figura de um papagaio - card01"></div><div class="card-front" ><img class="img-face" src="./assets/unicornparrot.gif" data-test="face-up-image" alt="papagaio unicornio"></div></div>';
         let main = document.querySelector('#card')
         main.appendChild(carta);
 
     }
     
+
+
+
+    // minhaArray.sort(comparador); // Após esta linha, a minhaArray estará embaralhada
+
+    // // Esta função pode ficar separada do código acima, onde você preferir
+    // function comparador() { 
+    //     return Math.random() - 0.5; 
+    // }
