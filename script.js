@@ -60,12 +60,18 @@ function flipcard() {
     if (primeiraCartaVirada.querySelector('.img-face').getAttribute("src") === segundaCartaVirada.querySelector('.img-face').getAttribute("src")) {
         primeiraCartaVirada = null;
         segundaCartaVirada = null;
+        jogadas++;
+            verificarFimDeJogo();
+
     } else {
         setTimeout(() => {
             primeiraCartaVirada.classList.remove("flip");
             segundaCartaVirada.classList.remove("flip");
             primeiraCartaVirada = null;
             segundaCartaVirada = null;
+            jogadas++;
+            verificarFimDeJogo();
+
           }, 1000);
   }
 }
@@ -82,3 +88,14 @@ const cardsFront = document.querySelectorAll(".img-face");
 cardsFront.forEach((card, index) => {
   card.setAttribute("src", gifsFrontDuplicados[index]);
 });
+
+let jogadas = 0;
+function verificarFimDeJogo() {
+    const todasCartasViradas = Array.from(document.querySelectorAll('.card')).every(carta => carta.classList.contains('flip'));
+  
+    if (todasCartasViradas) {
+      alert(`Você ganhou em ${jogadas} jogadas!`);
+      console.log(jogadas)
+
+    }
+  }
