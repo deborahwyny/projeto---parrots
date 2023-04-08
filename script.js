@@ -47,9 +47,28 @@ for (let i = 0; i < qtdCartas; i++) {
 
 // flip da tarde quando clicada
 const cards = document.querySelectorAll(".card");
+let primeiraCartaVirada = null;
+let segundaCartaVirada = null;
 
 function flipcard() {
   this.classList.toggle("flip");
+
+  if (primeiraCartaVirada === null){
+    primeiraCartaVirada = this;
+  } else if (segundaCartaVirada === null){
+    segundaCartaVirada = this;
+    if (primeiraCartaVirada.querySelector('.img-face').getAttribute("src") === segundaCartaVirada.querySelector('.img-face').getAttribute("src")) {
+        primeiraCartaVirada = null;
+        segundaCartaVirada = null;
+    } else {
+        setTimeout(() => {
+            primeiraCartaVirada.classList.remove("flip");
+            segundaCartaVirada.classList.remove("flip");
+            primeiraCartaVirada = null;
+            segundaCartaVirada = null;
+          }, 1000);
+  }
+}
 }
 
 cards.forEach((card) => {
