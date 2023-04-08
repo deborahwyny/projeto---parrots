@@ -14,12 +14,22 @@ cartaInicial.remove()
     for(let i = 0; i < numCartas; i++){
         const carta = document.createElement('div');
         carta.className = 'card';
-        carta.innerHTML = '<div class="card" id="card01" data-test="card"><div class="card-back" ><img class="img-back" src="./assets/back.png" data-test="face-down-image" alt="figura de um papagaio - card01"></div><div class="card-front" ><img class="img-face" src="./assets/unicornparrot.gif" data-test="face-up-image" alt="papagaio unicornio"></div></div>';
+        carta.innerHTML = '<div class="card-back"><img class="img-back" src="./assets/back.png" data-test="face-down-image" alt="figura de um papagaio - card01"></div><div class="card-front" ><img class="img-face" src="./assets/unicornparrot.gif" data-test="face-up-image" alt="papagaio unicornio"></div>';
         let main = document.querySelector('#card')
         main.appendChild(carta);
 
     }
-    
+
+
+    const cards = document.querySelectorAll('.card');
+
+    function flipcard(){
+        this.classList.toggle('flip')
+    }
+
+    cards.forEach(card => {
+      card.addEventListener('click', flipcard);
+    });
 
 
 

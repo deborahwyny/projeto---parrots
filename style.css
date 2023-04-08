@@ -41,7 +41,7 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all 1s;
+  transition: all 1s; 
   transform-style: preserve-3d;
 }
 
@@ -59,6 +59,7 @@ h1 {
 }
 
 
+
 .card-back {
   position: absolute;
   width: 100%;
@@ -72,9 +73,14 @@ h1 {
 }
 
 
+
  .card:active {
   transform: rotateY(180deg);
-} 
+}  
+
+.card.flip {
+  transform: rotateY(180deg);
+}
 
 
 main {
