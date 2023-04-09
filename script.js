@@ -38,9 +38,9 @@ for (let i = gifsFrontDuplicados.length - 1; i > 0; i--) {
 for (let i = 0; i < qtdCartas; i++) {
   const carta = document.createElement("div");
   carta.className = "card";
-  carta.setAttribute("data-test", ".card");
+  carta.setAttribute("data-test", "card");
   carta.innerHTML =
-    '<div class="card-back"><img class="img-back" src="./assets/back.png" data-test="face-down-image" alt="figura de um papagaio - card01"></div><div class="card-front" ><img class="img-face" src="" data-test="face-up-image" alt="papagaio unicornio"></div>';
+    '<div class="card-back"><img class="img-back" src="./assets/back.png" data-test="face-down-image" alt="figura de um papagaio - card01"></div><div class="card-front" ><img class="img-face" src=" "data-test="face-up-image" alt="papagaio unicornio"></div>';
   let main = document.querySelector("#card");
   main.appendChild(carta);
 }
